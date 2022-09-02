@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+{% block content %}
+ <h1>Crie seu Perfil</h1>
+ <a href="{% url 'profile.novo' %}">Novo</a>
+ <table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Intolerancia a Gluten</th>
+            <th>Intolerancia a Lactose</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for profile in object_list %}
+        <tr>
+            <td>{{ profile.nome_completo }}</td>
+            <td>{{ profile.idade }}</td>
+            <td>
+                {% if alegia_Gluten %}
+                Sim
+                {% else %}
+                Não
+                {% endif %}
+            </td>
+            <td>
+                {% if alegia_Lactose %}
+                Sim
+                {% else %}
+                Não
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+ </table>
+{% endblock content %}
