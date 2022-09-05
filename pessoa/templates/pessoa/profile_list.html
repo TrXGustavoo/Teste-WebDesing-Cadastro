@@ -9,26 +9,31 @@
             <th>Idade</th>
             <th>Intolerancia a Gluten</th>
             <th>Intolerancia a Lactose</th>
+            <th>Ações</td>
         </tr>
     </thead>
     <tbody>
         {% for profile in object_list %}
         <tr>
             <td>{{ profile.nome_completo }}</td>
-            <td>{{ profile.idade }}</td>
+            <td>{{ profile.idade }} Anos</td>
             <td>
-                {% if alegia_Gluten %}
+                {% if profile.intolerancia_a_Gluten %}
                 Sim
                 {% else %}
                 Não
                 {% endif %}
             </td>
             <td>
-                {% if alegia_Lactose %}
+                {% if profile.intolerancia_a_Lactose %}
                 Sim
                 {% else %}
                 Não
                 {% endif %}
+            </td>
+            <td>
+                <a href="{% url 'profile.edit' profile.pk %}">Editar</a>
+                <a href="{% url 'profile.delete' profile.pk %}">Deletar</a>
             </td>
         </tr>
         {% endfor %}

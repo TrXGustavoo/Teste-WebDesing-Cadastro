@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import Profile
 from .forms import ProfileForm
 
@@ -15,3 +15,14 @@ class ProfileCreateView(CreateView):
     model = Profile
     form_class = ProfileForm
     success_url = '/pessoas/'
+
+
+class ProfileUpdateView(UpdateView):
+    model = Profile
+    form_class = ProfileForm
+    success_url = '/pessoas/'
+
+
+class ProfileDeleteView(DeleteView):
+    model = Profile
+    success_url= '/pessoas/'
