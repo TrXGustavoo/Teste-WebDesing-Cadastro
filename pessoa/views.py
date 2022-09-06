@@ -9,7 +9,14 @@ class ListaProfileView(ListView):
     # dentro da classe de profile pega os objetos e tras todos eles
     queryset = Profile.objects.all().order_by('nome_completo')
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        filter_nome = self.request.GET.get('nome') or None
 
+        if filter_nome:
+            queryset = queryset.filter(nome_completo__contains=filter_nome)
+        return queryset
+    
 
 class ProfileCreateView(CreateView):
     model = Profile
