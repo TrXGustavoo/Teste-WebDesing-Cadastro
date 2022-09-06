@@ -1,4 +1,4 @@
-{% extends 'main/base.html' %}
+{% extends 'main/menu.html' %}
 {% block content %}
 <form  method="get">
     <input type="text" name="nome" placeholder="Buscar por nome">
@@ -6,7 +6,7 @@
 </form>
  <h1>Crie seu Perfil</h1>
  <a href="{% url 'profile.novo' %}">Novo</a>
- <table>
+ <table border='1'>
     <thead>
         <tr>
             <th>Nome</th>
