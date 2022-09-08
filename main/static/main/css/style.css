@@ -6,7 +6,7 @@ body {
     background-color: white;
 }
 
-nav{
+#navbar-perso{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
