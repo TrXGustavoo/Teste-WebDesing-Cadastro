@@ -3,11 +3,45 @@
 }
 
 body {
-    width: 100%;
-    background-color: lightblue;
+    background-color: white;
 }
-  
-h1 {
-    color: navy;
-    margin-left: 30px;
+
+nav{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(green 30%, white 70%);
+    border: 1px solid black;
+}
+
+.logo{
+    flex: 30%;
+    /* border: 1px solid red; */
+    font-size: 34px;
+}
+
+.menu{
+    flex: 70%;
+    /* border: 1px solid purple; */
+    text-align: right;
+}
+
+.menu a{
+    text-decoration: none;
+    margin: 20px;
+    margin-right: 5%;
+    font-size: 20px;
+    padding: 10px 25px;
+    background-color: #180F4A;
+    border-radius: 5px;
+    color: white;
+}
+
+#teste{
+    text-decoration: none;
+    padding: 10px 25px;
+    background-color: #180F4A;
+    border-radius: 5px;
+    color: white;
 }

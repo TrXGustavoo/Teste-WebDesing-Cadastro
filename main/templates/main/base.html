@@ -10,12 +10,17 @@
     
 </head>
 <body>
-    <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="#">Dieta</a></li>
-        <li><a href="#">Treino</a></li>
-        <li><a href="{% url 'profile.index' %}">Meu Perfil</a></li>
-    </ul>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>HYGIA</h1>
+        </div>
+        <div class="menu">
+                <a class="btns-index" href="{% url 'home' %}">Home</a>
+                <a class="btns-index" href="#">Dieta</a>
+                <a class="btns-index" href="#">Treino</a>
+                <a class="btns-index" href="{% url 'profile.index' %}">Meu Perfil</a>
+        </div>
+    </nav>
     {% block content %}
     {% endblock content %}
 </body>
